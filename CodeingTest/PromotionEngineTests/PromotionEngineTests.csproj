@@ -15,7 +15,10 @@
 
   <ItemGroup>
     <Folder Include="Fakes\" />
-    <Folder Include="PromotionCalculator\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PromotionEngine\PromotionEngine.csproj" />
   </ItemGroup>
 
 </Project>
