@@ -26,12 +26,13 @@ namespace PromotionEngine.Promotions
         }
 
          protected override double CalculatePromotion(List<CartItem> cartItems)
-        {
+         {
             var currentCartItem = cartItems.SingleOrDefault(x => x.SKUId == _skuId);
             var outputTotal = (double)0;
 
             if (currentCartItem != null)
             {
+                //Applying the promotion while the active cart items has the required number of items.
                 while (currentCartItem.Amount >= _noOfItems)
                 {
                     outputTotal += _price;

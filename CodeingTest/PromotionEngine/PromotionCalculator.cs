@@ -23,11 +23,14 @@ namespace PromotionEngine
         {
             var total = (double)0;
 
+            //Calculating the price when applying each avaible promotion.
+            //The amount for each SKU is lowered with each passing promotion. So only the "rest" wille be left for the final calculation.
             foreach (var promtion in _promotionService.GetActivePromotions())
             {
                 total += promtion.UsePromotion(cartItems);
             }
 
+            //Final calculation.
             foreach (var cartItem in cartItems)
             {
                 //Calculating the totalt price for the current item, using the prices of the unit listede in eg. a database.

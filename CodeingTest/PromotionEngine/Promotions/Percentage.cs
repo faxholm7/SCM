@@ -30,11 +30,14 @@ namespace PromotionEngine.Promotions
             if(currentItem != null)
             {
                 var skuItem = _priceListService.GetById(currentItem.SKUId);
+
                 if (skuItem == null)
                     throw new MissingItemException("Missing unit price");
 
+                //Calculating the price for the amount of SKU's
                 var priceTotal = skuItem.Price * currentItem.Amount;
 
+                //Calculating the new price after the percentages has been removed.
                 totalOutput = (priceTotal * _percentageOff) / 100;
 
                 currentItem.Amount = 0;

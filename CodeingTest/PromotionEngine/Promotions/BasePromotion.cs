@@ -12,6 +12,8 @@ namespace PromotionEngine.Promotions
     {
         public double UsePromotion(List<CartItem> cartItems)
         {
+            //Always validating if an cart item has a missing SKU ID.
+            //Afterwards calculating the promotion for the current promotion type
             ValidateCartItems(cartItems);
             return CalculatePromotion(cartItems);
         }

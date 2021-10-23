@@ -27,10 +27,12 @@ namespace PromotionEngine.Promotions
         {
             var totalAmount = (double)0;
 
+            //Only getting the cart items which have more than 1 in amount.
             var activeCartItems = cartItems.Where(x => _skuIds.Contains(x.SKUId) && x.Amount > 0).ToList();
 
             if (activeCartItems.Count() == _skuIds.Count)
             {
+                //Applying the promotion while all the active cartitems has more amount than one.
                 while(activeCartItems.All(x=> x.Amount > 0))
                 {
                     foreach (var item in _skuIds)
