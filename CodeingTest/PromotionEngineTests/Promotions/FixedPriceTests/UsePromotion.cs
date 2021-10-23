@@ -14,7 +14,9 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
         public void One_item()
         {
             //Arrange
-            var fixedPricePromotion = new FixedPrice();
+            var promotionSKUIds = new List<string>() { "A", "B" };
+            var promotionPrice = 70;
+            var fixedPricePromotion = new FixedPrice(promotionSKUIds, promotionPrice);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -34,7 +36,9 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
         public void No_amount_both()
         {
             //Arrange
-            var fixedPricePromotion = new FixedPrice();
+            var promotionSKUIds = new List<string>() { "A", "B" };
+            var promotionPrice = 70;
+            var fixedPricePromotion = new FixedPrice(promotionSKUIds, promotionPrice);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -55,7 +59,9 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
         public void No_amount_one()
         {
             //Arrange
-            var fixedPricePromotion = new FixedPrice();
+            var promotionSKUIds = new List<string>() { "A", "B" };
+            var promotionPrice = 70;
+            var fixedPricePromotion = new FixedPrice(promotionSKUIds, promotionPrice);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -76,7 +82,9 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
         public void No_SKU_Id_both()
         {
             //Arrange
-            var fixedPricePromotion = new FixedPrice();
+            var promotionSKUIds = new List<string>() { "A", "B" };
+            var promotionPrice = 70;
+            var fixedPricePromotion = new FixedPrice(promotionSKUIds, promotionPrice);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -97,7 +105,9 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
         public void No_SKU_Id_one()
         {
             //Arrange
-            var fixedPricePromotion = new FixedPrice();
+            var promotionSKUIds = new List<string>() { "A", "B" };
+            var promotionPrice = 70;
+            var fixedPricePromotion = new FixedPrice(promotionSKUIds, promotionPrice);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -118,7 +128,9 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
         public void Extra_amount_for_one()
         {
             //Arrange
-            var fixedPricePromotion = new FixedPrice();
+            var promotionSKUIds = new List<string>() { "A", "B" };
+            var promotionPrice = 70;
+            var fixedPricePromotion = new FixedPrice(promotionSKUIds, promotionPrice);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -141,7 +153,9 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
         public void Extra_amount_for_two()
         {
             //Arrange
-            var fixedPricePromotion = new FixedPrice();
+            var promotionSKUIds = new List<string>() { "A", "B" };
+            var promotionPrice = 70;
+            var fixedPricePromotion = new FixedPrice(promotionSKUIds, promotionPrice);
 
             var inputCartItems = new List<CartItem>()
             {
