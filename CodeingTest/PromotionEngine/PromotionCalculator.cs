@@ -15,5 +15,12 @@ namespace PromotionEngine
         {
             return 0;
         }
+
+        //TODO: Change to internal and make internals visible for test project
+        public double GetUnitPrice(string skuId)
+        {
+            return 0;
+        }
+        
     }
 }
