@@ -1,4 +1,5 @@
 ﻿using PromotionEngine;
+using PromotionEngine.Exceptions;
 using PromotionEngineTests.Fakes.Services;
 using System;
 using System.Collections.Generic;
@@ -98,7 +99,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
             {
                 var output = calculator.GetUnitPrice(inputSkuId);
             }
-            catch (Exception e)
+            catch (MissingItemException e)
             {
                 errorMessage = e.Message;
             }
@@ -107,14 +108,15 @@ namespace PromotionEngineTests.PromotionCalculatorTests
             Assert.Equal(expectedErrorMessage, errorMessage);
         }
 
-        [Fact]
-        public void With_Empty_SKU_ID()
+        [Theory]
+        [InlineData("")]
+        [InlineData(" ")]
+        [InlineData("   ")]
+        public void With_Empty_SKU_ID(string inputSkuId)
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
             var calculator = new PromotionCalculator(priceListServiceStub);
-
-            var inputSkuId = "E";
 
             var expectedErrorMessage = "Empty SKU ID.";
             var errorMessage = string.Empty;
@@ -124,7 +126,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
             {
                 var output = calculator.GetUnitPrice(inputSkuId);
             }
-            catch (Exception e)
+            catch (EmptyIdException e)
             {
                 errorMessage = e.Message;
             }

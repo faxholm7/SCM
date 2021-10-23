@@ -6,4 +6,3 @@ C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngi
 C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.csproj.CoreCompileInputs.cache
 C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.dll
 C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.pdb
-C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.csprojAssemblyReference.cache
