@@ -10,11 +10,15 @@ namespace PromotionEngineTests.PromotionCalculatorTests
 
     public class CalculatePrice
     {
+        #region "No promotions"
+
         [Fact]
-        public void NoPromotionOneA()
+        public void No_promotion_one_A()
         {
             //Arrange
-            var calculator = new PromotionCalculator(null);
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "A", Amount = 1 } };
 
             var expectedOutputPrice = 50;
@@ -27,10 +31,11 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         [Fact]
-        public void NoPromotionOneB()
+        public void No_promotion_one_B()
         {
             //Arrange
-            var calculator = new PromotionCalculator(null);
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "B", Amount = 1 } };
 
@@ -44,10 +49,12 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         [Fact]
-        public void NoPromotionOneC()
+        public void No_promotion_one_C()
         {
             //Arrange
-            var calculator = new PromotionCalculator(null);
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "C", Amount = 1 } };
 
             var expectedOutputPrice = 20;
@@ -60,10 +67,12 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         [Fact]
-        public void NoPromotionOneD()
+        public void No_promotion_one_D()
         {
             //Arrange
-            var calculator = new PromotionCalculator(null);
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "D", Amount = 1 } };
 
             var expectedOutputPrice = 15;
@@ -74,5 +83,14 @@ namespace PromotionEngineTests.PromotionCalculatorTests
             //Asset
             Assert.Equal(expectedOutputPrice, output);
         }
+
+        //Add:
+        //Empty cart list
+        //One cart item, no amount
+        //One cart item, no sku id
+        //One cart item, non existing ID
+
+        #endregion
+
     }
 }

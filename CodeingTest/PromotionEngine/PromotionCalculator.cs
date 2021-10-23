@@ -17,7 +17,16 @@ namespace PromotionEngine
 
         public double CalculatePrice(List<CartItem> cartItems)
         {
-            return 0;
+            var total = (double)0;
+
+            foreach (var cartItem in cartItems)
+            {
+                var unitPrice = GetUnitPrice(cartItem.SKUId);
+                var itemTotal = unitPrice * cartItem.Amount;
+                total += itemTotal;
+            }
+
+            return total;
         }
 
         //TODO: Change to internal and make internals visible for test project
