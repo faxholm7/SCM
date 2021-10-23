@@ -269,7 +269,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         #region "Single promotion 'n' items"
         
         [Fact]
-        public void NItems_Promotion_Three_A()
+        public void NItems_promotion_Three_A()
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
@@ -291,7 +291,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         [Fact]
-        public void NItems_Promotion_Four_A()
+        public void NItems_promotion_Four_A()
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
@@ -313,7 +313,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         [Fact]
-        public void NItems_Promotion_Six_A()
+        public void NItems_promotion_Six_A()
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
@@ -335,7 +335,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         [Fact]
-        public void NItems_Promotion_Two_B()
+        public void NItems_promotion_Two_B()
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
@@ -357,7 +357,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         [Fact]
-        public void NItems_Promotion_Four_B()
+        public void NItems_promotion_Four_B()
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
@@ -379,7 +379,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         [Fact]
-        public void NItems_Promotion_Five_B()
+        public void NItems_promotion_Five_B()
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
@@ -388,7 +388,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
 
             var inputCartItems = new List<CartItem>()
             {
-                new CartItem() { SKUId = "B", Amount = 5 },
+                new CartItem() { SKUId = "B", Amount = 5 }
             };
 
             var expectedOutputPrice = 120;
@@ -403,6 +403,98 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         #endregion
 
         #region "Single promotion fixed price"
+
+        [Fact]
+        public void Fixed_price_one_C_one_D()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "C", Amount = 1 },
+                new CartItem() { SKUId = "D", Amount = 1 }
+            };
+
+            var expectedOutputPrice = 30;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void Fixed_price_two_C_one_D()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "C", Amount = 2 },
+                new CartItem() { SKUId = "D", Amount = 1 }
+            };
+
+            var expectedOutputPrice = 50;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void Fixed_price_two_C_two_D()
+        {
+            //Arrangem
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "C", Amount = 2 },
+                new CartItem() { SKUId = "D", Amount = 2 }
+            };
+
+            var expectedOutputPrice = 60;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void Fixed_price_three_C_five_D()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "C", Amount = 3 },
+                new CartItem() { SKUId = "D", Amount = 5 }
+            };
+
+            var expectedOutputPrice = 120;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
 
         #endregion
 

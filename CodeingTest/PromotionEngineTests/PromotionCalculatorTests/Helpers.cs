@@ -26,6 +26,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
                 service.Promtions.Add(new NItems("A", 3, 130));
             if(nItemsB)
                 service.Promtions.Add(new NItems("B", 2, 45));
+            if (cdFixed)
+                service.Promtions.Add(new FixedPrice(new List<string>() { "C", "D" }, 30));
             
             return service;
         }
