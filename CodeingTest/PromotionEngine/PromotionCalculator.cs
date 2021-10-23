@@ -21,6 +21,7 @@ namespace PromotionEngine
 
             foreach (var cartItem in cartItems)
             {
+                //Calculating the totalt price for the current item, using the prices of the unit listede in eg. a database.
                 var unitPrice = GetUnitPrice(cartItem.SKUId);
                 var itemTotal = unitPrice * cartItem.Amount;
                 total += itemTotal;

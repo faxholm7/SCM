@@ -254,7 +254,86 @@ namespace PromotionEngineTests.PromotionCalculatorTests
 
         #endregion
 
+        #region "Single promotion 'n' items"
+        
+        [Fact]
+        public void NItems_Promotion_Three_A()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
 
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "A", Amount = 3 },
+            };
+
+            var expectedOutputPrice = 130;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void NItems_Promotion_Four_A()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "A", Amount = 4 },
+            };
+
+            var expectedOutputPrice = 180;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void NItems_Promotion_Six_A()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "A", Amount = 6 },
+            };
+
+            var expectedOutputPrice = 260;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+
+
+        #endregion
+
+        #region "Single promotion fixed price"
+
+        #endregion
+
+        #region "Two promotions 'n' items and fixed price"
+
+        #endregion
+
+        #region "Scenario's"
+
+        #endregion
 
         //Add:
         //Empty cart list
