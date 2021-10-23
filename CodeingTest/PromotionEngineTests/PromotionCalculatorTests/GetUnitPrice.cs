@@ -15,7 +15,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var calculator = new PromotionCalculator(priceListServiceStub, null);
 
             var inputSkuId = "A";
 
@@ -33,7 +33,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var calculator = new PromotionCalculator(priceListServiceStub, null);
 
             var inputSkuId = "B";
 
@@ -51,7 +51,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var calculator = new PromotionCalculator(priceListServiceStub, null);
 
             var inputSkuId = "C";
 
@@ -69,7 +69,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var calculator = new PromotionCalculator(priceListServiceStub, null);
 
             var inputSkuId = "D";
 
@@ -87,7 +87,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var calculator = new PromotionCalculator(priceListServiceStub, null);
 
             var inputSkuId = "E";
 
@@ -116,7 +116,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var calculator = new PromotionCalculator(priceListServiceStub, null);
 
             var expectedErrorMessage = "Empty SKU ID.";
             var errorMessage = string.Empty;

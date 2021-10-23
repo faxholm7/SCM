@@ -1,6 +1,8 @@
 ﻿using PromotionEngine.Exceptions;
+using PromotionEngine.Interfaces;
 using PromotionEngine.Interfaces.Services;
 using PromotionEngine.Models;
+using PromotionEngine.Promotions;
 using System;
 using System.Collections.Generic;
 
@@ -8,44 +10,29 @@ namespace PromotionEngine
 {
     public class PromotionCalculator
     {
-        private readonly IPriceListService _priceService; 
+        private readonly IPriceListService _priceService;
+        private readonly IPromotionService _promotionService;
 
-        public PromotionCalculator(IPriceListService priceService)
+        public PromotionCalculator(IPriceListService priceService, IPromotionService promotionService)
         {
             _priceService = priceService;
+            _promotionService = promotionService;
         }
 
         public double CalculatePrice(List<CartItem> cartItems)
         {
             var total = (double)0;
 
+            foreach (var promtion in _promotionService.GetActivePromotions())
+            {
+                total += promtion.UsePromotion(cartItems);
+            }
+
             foreach (var cartItem in cartItems)
             {
-                var itemTotal = (double)0;
-
-                switch (cartItem.SKUId)
-                {
-                    case "A": //Non refined implemtation of 'n' Items promotion.
-                        while (cartItem.Amount >= 3)
-                        {
-                            itemTotal += 130;
-                            cartItem.Amount -= 3;
-                        }
-                        break;
-
-                    case "B":
-                        while (cartItem.Amount >= 2)
-                        {
-                            itemTotal += 45;
-                            cartItem.Amount -= 2;
-                        }
-                        break;
-
-                }
-
                 //Calculating the totalt price for the current item, using the prices of the unit listede in eg. a database.
                 var unitPrice = GetUnitPrice(cartItem.SKUId);
-                itemTotal += unitPrice * cartItem.Amount;
+                var itemTotal = unitPrice * cartItem.Amount;
                 total += itemTotal;
             }
 

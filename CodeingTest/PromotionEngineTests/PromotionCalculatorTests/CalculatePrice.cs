@@ -17,7 +17,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "A", Amount = 1 } };
 
@@ -35,7 +36,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "A", Amount = 2 } };
 
@@ -53,7 +55,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "B", Amount = 1 } };
 
@@ -71,7 +74,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "B", Amount = 2 } };
 
@@ -89,7 +93,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "C", Amount = 1 } };
 
@@ -107,7 +112,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "C", Amount = 2 } };
 
@@ -125,7 +131,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "D", Amount = 1 } };
 
@@ -143,7 +150,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() { new CartItem() { SKUId = "D", Amount = 2 } };
 
@@ -165,7 +173,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>() 
             { 
@@ -187,7 +196,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -210,7 +220,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -234,7 +245,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -261,7 +273,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -282,7 +295,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -303,7 +317,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -324,7 +339,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsB: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -345,7 +361,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsB: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
@@ -366,7 +383,8 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         {
             //Arrange
             var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
-            var calculator = new PromotionCalculator(priceListServiceStub);
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsB: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
 
             var inputCartItems = new List<CartItem>()
             {
