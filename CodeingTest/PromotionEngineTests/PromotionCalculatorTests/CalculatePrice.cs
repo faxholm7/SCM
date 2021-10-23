@@ -319,7 +319,68 @@ namespace PromotionEngineTests.PromotionCalculatorTests
             Assert.Equal(expectedOutputPrice, output);
         }
 
+        [Fact]
+        public void NItems_Promotion_Two_B()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
 
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "B", Amount = 2 },
+            };
+
+            var expectedOutputPrice = 45;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void NItems_Promotion_Four_B()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "B", Amount = 4 },
+            };
+
+            var expectedOutputPrice = 90;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void NItems_Promotion_Five_B()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "B", Amount = 5 },
+            };
+
+            var expectedOutputPrice = 120;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
 
         #endregion
 
