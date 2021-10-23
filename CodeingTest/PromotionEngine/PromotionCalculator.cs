@@ -39,11 +39,10 @@ namespace PromotionEngine
             return total;
         }
 
-        //TODO: Change to internal and make internals visible for test project
-        public double GetUnitPrice(string skuId)
+        internal double GetUnitPrice(string skuId)
         {
             if (string.IsNullOrWhiteSpace(skuId))
-                throw new EmptyIdException("Empty SKU ID."); //TODO: Think about changeing the exception implemtation, so only the kind of ID is specifed in the message.
+                throw new EmptyIdException("Empty SKU ID."); 
 
             var skuItem = _priceService.GetById(skuId);
 

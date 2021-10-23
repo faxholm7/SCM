@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("PromotionEngineTests")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PromotionEngine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

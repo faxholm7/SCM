@@ -11,7 +11,11 @@ namespace PromotionEngine.Promotions
     {
         private readonly List<string> _skuIds;
         private readonly double _price;  
-
+        /// <summary>
+        /// Class for the fixed price promotion.
+        /// </summary>
+        /// <param name="activeSKUIds">List of the fixed price SKU Ids</param>
+        /// <param name="price">Promotion price</param>
         public FixedPrice(List<string> activeSKUIds, double price)
         {
             _skuIds = activeSKUIds;

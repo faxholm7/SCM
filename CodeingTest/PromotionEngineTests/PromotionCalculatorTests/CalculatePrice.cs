@@ -632,7 +632,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
                 new CartItem() {SKUId = "", Amount = 1 }
             };
 
-            var expectedErrorMessage = "";
+            var expectedErrorMessage = "Empty SKU ID.";
             var errorMessage = string.Empty;
 
             //Act
@@ -662,7 +662,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
                 new CartItem() {SKUId = "E", Amount = 1 }
             };
 
-            var expectedErrorMessage = "";
+            var expectedErrorMessage = "Non existing SKU ID.";
             var errorMessage = string.Empty;
 
             //Act
@@ -680,11 +680,5 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         }
 
         #endregion
-        //Add:
-        //Empty cart list
-        //One cart item, no amount
-        //One cart item, no sku id
-        //One cart item, non existing ID
-
     }
 }
