@@ -1,4 +1,5 @@
-﻿using PromotionEngine.Models;
+﻿using PromotionEngine.Exceptions;
+using PromotionEngine.Models;
 using PromotionEngine.Promotions;
 using System;
 using System.Collections.Generic;
@@ -92,13 +93,21 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
                 new CartItem() { Amount = 1 }
             };
 
-            var expectedOutput = 0;
+            var errorMessage = string.Empty;
+            var expectedErrorMessage = "Empty SKU ID.";
 
             //Act
-            var ouput = fixedPricePromotion.UsePromotion(inputCartItems);
+            try
+            {
+                fixedPricePromotion.UsePromotion(inputCartItems);
+            }
+            catch (EmptyIdException e)
+            {
+                errorMessage = e.Message;
+            }
 
             //Assert
-            Assert.Equal(expectedOutput, ouput);
+            Assert.Equal(expectedErrorMessage, errorMessage);
         }
 
         [Fact]
@@ -115,13 +124,21 @@ namespace PromotionEngineTests.Promotions.FixedPriceTests
                 new CartItem() { Amount = 1 }
             };
 
-            var expectedOutput = 0;
+            var errorMessage = string.Empty;
+            var expectedErrorMessage = "Empty SKU ID.";
 
             //Act
-            var ouput = fixedPricePromotion.UsePromotion(inputCartItems);
+            try
+            {
+                fixedPricePromotion.UsePromotion(inputCartItems);
+            }
+            catch (EmptyIdException e)
+            {
+                errorMessage = e.Message;
+            }
 
             //Assert
-            Assert.Equal(expectedOutput, ouput);
+            Assert.Equal(expectedErrorMessage, errorMessage);
         }
 
         [Fact]

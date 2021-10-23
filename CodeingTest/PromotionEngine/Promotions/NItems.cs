@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PromotionEngine.Promotions
 {
-    public class NItems : IPromtion
+    public class NItems : BasePromotion
     {
         private readonly string _skuId;
         private readonly int _noOfItems;
@@ -25,7 +25,7 @@ namespace PromotionEngine.Promotions
             _price = price;
         }
 
-        public double UsePromotion(List<CartItem> cartItems)
+         protected override double CalculatePromotion(List<CartItem> cartItems)
         {
             var currentCartItem = cartItems.SingleOrDefault(x => x.SKUId == _skuId);
             var outputTotal = (double)0;

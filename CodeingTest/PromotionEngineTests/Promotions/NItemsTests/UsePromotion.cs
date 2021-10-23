@@ -1,4 +1,5 @@
-﻿using PromotionEngine.Models;
+﻿using PromotionEngine.Exceptions;
+using PromotionEngine.Models;
 using PromotionEngine.Promotions;
 using System;
 using System.Collections.Generic;
@@ -44,13 +45,21 @@ namespace PromotionEngineTests.Promotions.NItemsTests
                 new CartItem() { Amount = 10}
             };
 
-            var expectedOutput = 0;
+            var errorMessage = string.Empty;
+            var expectedErrorMessage = "Empty SKU ID.";
 
             //Act
-            var output = nItemsPromotion.UsePromotion(inputCartItems);
+            try
+            {
+                nItemsPromotion.UsePromotion(inputCartItems);
+            }
+            catch (EmptyIdException e)
+            {
+                errorMessage = e.Message;
+            }
 
             //Assert
-            Assert.Equal(expectedOutput, output);
+            Assert.Equal(expectedErrorMessage, errorMessage);
         }
 
         [Fact]

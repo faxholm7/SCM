@@ -1,4 +1,5 @@
-﻿using PromotionEngine.Interfaces;
+﻿using PromotionEngine.Exceptions;
+using PromotionEngine.Interfaces;
 using PromotionEngine.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace PromotionEngine.Promotions
 {
-    public class FixedPrice : IPromtion
+    public class FixedPrice : BasePromotion
     {
         private readonly List<string> _skuIds;
         private readonly double _price;  
@@ -22,7 +23,7 @@ namespace PromotionEngine.Promotions
             _price = price;
         }
 
-        public double UsePromotion(List<CartItem> cartItems)
+        protected override double CalculatePromotion(List<CartItem> cartItems)
         {
             var totalAmount = (double)0;
 
