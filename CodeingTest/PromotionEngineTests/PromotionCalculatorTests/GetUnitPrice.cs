@@ -1,4 +1,5 @@
 ﻿using PromotionEngine;
+using PromotionEngineTests.Fakes.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,7 +13,9 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         public void Get_A_Price()
         {
             //Arrange
-            var calculator = new PromotionCalculator();
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputSkuId = "A";
 
             var expectedOutput = 50;
@@ -28,7 +31,9 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         public void Get_B_Price()
         {
             //Arrange
-            var calculator = new PromotionCalculator();
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputSkuId = "B";
 
             var expectedOutput = 30;
@@ -44,7 +49,9 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         public void Get_C_Price()
         {
             //Arrange
-            var calculator = new PromotionCalculator();
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputSkuId = "C";
 
             var expectedOutput = 20;
@@ -60,7 +67,9 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         public void Get_D_Price()
         {
             //Arrange
-            var calculator = new PromotionCalculator();
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputSkuId = "D";
 
             var expectedOutput = 15;
@@ -76,7 +85,9 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         public void Non_existing_SKU_ID()
         {
             //Arrange
-            var calculator = new PromotionCalculator();
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputSkuId = "E";
 
             var expectedErrorMessage = "Non existing SKU ID.";
@@ -100,7 +111,9 @@ namespace PromotionEngineTests.PromotionCalculatorTests
         public void With_Empty_SKU_ID()
         {
             //Arrange
-            var calculator = new PromotionCalculator();
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var calculator = new PromotionCalculator(priceListServiceStub);
+
             var inputSkuId = "E";
 
             var expectedErrorMessage = "Empty SKU ID.";

@@ -1,4 +1,5 @@
-﻿using PromotionEngine.Models;
+﻿using PromotionEngine.Interfaces.Services;
+using PromotionEngine.Models;
 using System;
 using System.Collections.Generic;
 
@@ -6,9 +7,11 @@ namespace PromotionEngine
 {
     public class PromotionCalculator
     {
-        public PromotionCalculator()
-        {
+        private readonly IPriceListService _priceService; 
 
+        public PromotionCalculator(IPriceListService priceService)
+        {
+            _priceService = priceService;
         }
 
         public double CalculatePrice(List<CartItem> cartItems)
