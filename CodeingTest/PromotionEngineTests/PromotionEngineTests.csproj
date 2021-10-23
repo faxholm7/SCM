@@ -17,8 +17,4 @@
     <ProjectReference Include="..\PromotionEngine\PromotionEngine.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Promotions\FixedPriceTests\" />
-  </ItemGroup>
-
 </Project>
