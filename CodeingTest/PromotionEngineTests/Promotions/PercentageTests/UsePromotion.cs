@@ -12,10 +12,13 @@ namespace PromotionEngineTests.Promotions.PercentageTests
         {
             //Arrange
 
+            var expectedOutput = 20;
+
             //Act
+            var output = 0;
 
             //Assert
-            Assert.True(false);
+            Assert.Equal(expectedOutput, output);
         }
 
         [Fact]

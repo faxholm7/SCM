@@ -19,7 +19,7 @@ namespace PromotionEngineTests.PromotionCalculatorTests
             return service;
         }
 
-        public static PromotionServiceFake GetPromotionServiceFake(bool nItemsA = false, bool nItemsB = false, bool cdFixed = false)
+        public static PromotionServiceFake GetPromotionServiceFake(bool nItemsA = false, bool nItemsB = false, bool cdFixed = false, bool cPercentage = false, PriceListServiceFake priceListService = null)
         {
             var service = new PromotionServiceFake();
             if(nItemsA)
@@ -28,6 +28,14 @@ namespace PromotionEngineTests.PromotionCalculatorTests
                 service.Promtions.Add(new NItems("B", 2, 45));
             if (cdFixed)
                 service.Promtions.Add(new FixedPrice(new List<string>() { "C", "D" }, 30));
+            if(cPercentage)
+            {
+                if (priceListService == null)
+                    priceListService = GetBasicPriceListServiceFake();
+
+                service.Promtions.Add(new Percentage(priceListService, "C", 50));
+            }
+                
             
             return service;
         }
