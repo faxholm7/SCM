@@ -9,7 +9,7 @@ namespace PromotionEngineTests.Fakes.Services
 {
     public class PriceListServiceFake : IPriceListService
     {
-        public List<SKUItem> SKUItems { get; set; }
+        public List<SKUItem> SKUItems { get; set; } = new List<SKUItem>();
 
         public SKUItem GetById(string id)
         {
