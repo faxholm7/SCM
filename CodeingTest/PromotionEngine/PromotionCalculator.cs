@@ -32,6 +32,15 @@ namespace PromotionEngine
                             cartItem.Amount -= 3;
                         }
                         break;
+
+                    case "B":
+                        while (cartItem.Amount >= 2)
+                        {
+                            itemTotal += 45;
+                            cartItem.Amount -= 2;
+                        }
+                        break;
+
                 }
 
                 //Calculating the totalt price for the current item, using the prices of the unit listede in eg. a database.
