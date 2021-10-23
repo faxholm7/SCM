@@ -21,9 +21,22 @@ namespace PromotionEngine
 
             foreach (var cartItem in cartItems)
             {
+                var itemTotal = (double)0;
+
+                switch (cartItem.SKUId)
+                {
+                    case "A": //Non refined implemtation of 'n' Items promotion.
+                        while (cartItem.Amount >= 3)
+                        {
+                            itemTotal += 130;
+                            cartItem.Amount -= 3;
+                        }
+                        break;
+                }
+
                 //Calculating the totalt price for the current item, using the prices of the unit listede in eg. a database.
                 var unitPrice = GetUnitPrice(cartItem.SKUId);
-                var itemTotal = unitPrice * cartItem.Amount;
+                itemTotal += unitPrice * cartItem.Amount;
                 total += itemTotal;
             }
 
