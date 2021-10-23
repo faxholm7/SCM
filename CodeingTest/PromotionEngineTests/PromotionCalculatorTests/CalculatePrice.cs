@@ -1,4 +1,5 @@
 ﻿using PromotionEngine;
+using PromotionEngine.Exceptions;
 using PromotionEngine.Models;
 using System;
 using System.Collections.Generic;
@@ -498,14 +499,187 @@ namespace PromotionEngineTests.PromotionCalculatorTests
 
         #endregion
 
-        #region "Two promotions 'n' items and fixed price"
-
-        #endregion
-
         #region "Scenario's"
+        
+        [Fact]
+        public void Scenario_A()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true, nItemsB: true, cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "A", Amount = 1},
+                new CartItem() { SKUId = "B", Amount = 1},
+                new CartItem() { SKUId = "C", Amount = 1}
+            };
+
+            var expectedOutputPrice = 100;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void Scenario_B()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true, nItemsB: true, cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "A", Amount = 5},
+                new CartItem() { SKUId = "B", Amount = 5},
+                new CartItem() { SKUId = "C", Amount = 1}
+            };
+
+            var expectedOutputPrice = 370;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void Scenario_C()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true, nItemsB: true, cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "A", Amount = 3},
+                new CartItem() { SKUId = "B", Amount = 5},
+                new CartItem() { SKUId = "C", Amount = 1},
+                new CartItem() { SKUId = "D", Amount = 1}
+            };
+
+            var expectedOutputPrice = 280;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
 
         #endregion
 
+        #region "Outliers"
+
+        [Fact]
+        public void Empty_cart_list()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true, nItemsB: true, cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>();
+
+            var expectedOutputPrice = 0;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void Cart_item_missing_amount()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true, nItemsB: true, cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() { SKUId = "A" }
+            };
+
+            var expectedOutputPrice = 0;
+
+            //Act
+            var output = calculator.CalculatePrice(inputCartItems);
+
+            //Asset
+            Assert.Equal(expectedOutputPrice, output);
+        }
+
+        [Fact]
+        public void Cart_item_missing_SKU_Id()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true, nItemsB: true, cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() {SKUId = "", Amount = 1 }
+            };
+
+            var expectedErrorMessage = "";
+            var errorMessage = string.Empty;
+
+            //Act
+            try
+            {
+                var output = calculator.CalculatePrice(inputCartItems);
+            }
+            catch(EmptyIdException e)
+            {
+                errorMessage = e.Message;
+            }
+
+            //Asset
+            Assert.Equal(expectedErrorMessage, errorMessage);
+        }
+
+        [Fact]
+        public void Cart_item_non_existing_SKU_Id()
+        {
+            //Arrange
+            var priceListServiceStub = Helpers.GetBasicPriceListServiceFake();
+            var promotionServiceStub = Helpers.GetPromotionServiceFake(nItemsA: true, nItemsB: true, cdFixed: true);
+            var calculator = new PromotionCalculator(priceListServiceStub, promotionServiceStub);
+
+            var inputCartItems = new List<CartItem>()
+            {
+                new CartItem() {SKUId = "E", Amount = 1 }
+            };
+
+            var expectedErrorMessage = "";
+            var errorMessage = string.Empty;
+
+            //Act
+            try
+            {
+                var output = calculator.CalculatePrice(inputCartItems);
+            }
+            catch (MissingItemException e)
+            {
+                errorMessage = e.Message;
+            }
+
+            //Asset
+            Assert.Equal(expectedErrorMessage, errorMessage);
+        }
+
+        #endregion
         //Add:
         //Empty cart list
         //One cart item, no amount
