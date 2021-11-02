@@ -7,3 +7,13 @@ C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngi
 C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.dll
 C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.pdb
 C:\Users\JoachimAlexander\Source\Repos\SCM-coding-test\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.csprojAssemblyReference.cache
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\bin\Debug\netcoreapp3.1\PromotionEngine.deps.json
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\bin\Debug\netcoreapp3.1\PromotionEngine.dll
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\bin\Debug\netcoreapp3.1\PromotionEngine.pdb
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.csproj.AssemblyReference.cache
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.AssemblyInfoInputs.cache
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.AssemblyInfo.cs
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.csproj.CoreCompileInputs.cache
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.dll
+C:\Users\christian\Source\Repos\SCM\CodeingTest\PromotionEngine\obj\Debug\netcoreapp3.1\PromotionEngine.pdb

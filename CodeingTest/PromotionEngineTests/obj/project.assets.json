@@ -3485,23 +3485,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JoachimAlexander\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\christian\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JoachimAlexander\\Source\\Repos\\SCM-coding-test\\CodeingTest\\PromotionEngineTests\\PromotionEngineTests.csproj",
+      "projectUniqueName": "C:\\Users\\christian\\Source\\Repos\\SCM\\CodeingTest\\PromotionEngineTests\\PromotionEngineTests.csproj",
       "projectName": "PromotionEngineTests",
-      "projectPath": "C:\\Users\\JoachimAlexander\\Source\\Repos\\SCM-coding-test\\CodeingTest\\PromotionEngineTests\\PromotionEngineTests.csproj",
-      "packagesPath": "C:\\Users\\JoachimAlexander\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JoachimAlexander\\Source\\Repos\\SCM-coding-test\\CodeingTest\\PromotionEngineTests\\obj\\",
+      "projectPath": "C:\\Users\\christian\\Source\\Repos\\SCM\\CodeingTest\\PromotionEngineTests\\PromotionEngineTests.csproj",
+      "packagesPath": "C:\\Users\\christian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\christian\\Source\\Repos\\SCM\\CodeingTest\\PromotionEngineTests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\JoachimAlexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\christian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3509,15 +3505,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://batech.pkgs.visualstudio.com/_packaging/BA/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\JoachimAlexander\\Source\\Repos\\SCM-coding-test\\CodeingTest\\PromotionEngine\\PromotionEngine.csproj": {
-              "projectPath": "C:\\Users\\JoachimAlexander\\Source\\Repos\\SCM-coding-test\\CodeingTest\\PromotionEngine\\PromotionEngine.csproj"
+            "C:\\Users\\christian\\Source\\Repos\\SCM\\CodeingTest\\PromotionEngine\\PromotionEngine.csproj": {
+              "projectPath": "C:\\Users\\christian\\Source\\Repos\\SCM\\CodeingTest\\PromotionEngine\\PromotionEngine.csproj"
             }
           }
         }
@@ -3564,7 +3559,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
